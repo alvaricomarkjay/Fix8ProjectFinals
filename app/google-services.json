@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "246980307273",
+    "firebase_url": "https://fix8project-default-rtdb.firebaseio.com",
+    "project_id": "fix8project",
+    "storage_bucket": "fix8project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246980307273:android:6e0e4451443297923d1298",
+        "android_client_info": {
+          "package_name": "com.example.capstoneproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246980307273-pnghj74nj7d28sp7b41ij7pd9d17hqe5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAUUvV8hI3oIvyrd6C6P67LsC9YxbeVLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246980307273-pnghj74nj7d28sp7b41ij7pd9d17hqe5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246980307273:android:33b850946eedb7863d1298",
+        "android_client_info": {
+          "package_name": "com.example.thefixitproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246980307273-pnghj74nj7d28sp7b41ij7pd9d17hqe5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAUUvV8hI3oIvyrd6C6P67LsC9YxbeVLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246980307273-pnghj74nj7d28sp7b41ij7pd9d17hqe5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
