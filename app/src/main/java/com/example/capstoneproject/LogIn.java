@@ -7,8 +7,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,19 +17,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.Objects;
 
 public class LogIn extends AppCompatActivity {
 
     private EditText  LogInEmail, LogInPassword;
     private Button loginU;
-    private TextView registerU;
+    private TextView registerU, forgotPW;
     private ProgressDialog progressBarDialog;
     private FirebaseAuth firebaseAuth;
 
@@ -48,6 +39,7 @@ public class LogIn extends AppCompatActivity {
 
         loginU = findViewById(R.id.loginBtn);
         registerU = findViewById(R.id.toRegister);
+        forgotPW = findViewById(R.id.toResetPassword);
 
         progressBarDialog = new ProgressDialog(this);
 
@@ -55,6 +47,15 @@ public class LogIn extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LoginUser();
+            }
+        });
+
+        forgotPW.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LogIn.this, ResetPassword.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -90,7 +91,7 @@ public class LogIn extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(LogIn.this, "Logged in Successfully", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(LogIn.this, MainActivity.class);
+                    Intent intent = new Intent(LogIn.this, Dashboard.class);
                     startActivity(intent);
                     finish();
                 }else{
@@ -100,4 +101,5 @@ public class LogIn extends AppCompatActivity {
             }
         });
     }
+
 }

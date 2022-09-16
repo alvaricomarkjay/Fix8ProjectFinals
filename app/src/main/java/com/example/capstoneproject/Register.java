@@ -18,6 +18,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class Register extends AppCompatActivity {
@@ -28,6 +33,7 @@ public class Register extends AppCompatActivity {
     private ProgressDialog progressBarDialog;
     private FirebaseAuth firebaseAuth;
 
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://fix8project-default-rtdb.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,10 +108,17 @@ public class Register extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+
+                    databaseReference.child("users").child(userFullname).child("fullname").setValue(userFullname);
+                    databaseReference.child("users").child(userFullname).child("email").setValue(userEmail);
+                    databaseReference.child("users").child(userFullname).child("phone").setValue(userPhone);
+                    databaseReference.child("users").child(userFullname).child("password").setValue(userPassword);
+
                     Toast.makeText(Register.this, "Successfully Registered", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(Register.this, MainActivity.class);
+                    Intent intent = new Intent(Register.this, Dashboard.class);
                     startActivity(intent);
                     finish();
+
                 }else{
                     Toast.makeText(Register.this, "Registration Failed", Toast.LENGTH_LONG).show();
                 }
