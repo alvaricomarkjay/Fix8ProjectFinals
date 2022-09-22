@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:background="@android:color/white"
+tools:context=".MessageConvoActivity">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="2dp"
+            android:background="#D5D5D5">
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="@android:color/white">
+                <ImageView
+                    android:id="@+id/chatBackArrow"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_baseline_arrow_back_24"
+                    app:tint="#171717"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@android:color/white">
+                <TextView
+                    android:id="@+id/chatFullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textSize="20sp"
+                    android:gravity="center_vertical"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
+        <ListView
+            android:id="@+id/convoListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:stackFromBottom="true"
+            android:transcriptMode="normal"
+            android:divider="@null"
+            android:dividerHeight="0dp"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="vertical"
+        android:layout_gravity="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/messageEditor"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/message_edittext_border"
+                android:hint="Enter message"
+                android:padding="7dp"
+                android:paddingLeft="10dp"
+                android:inputType="textCapSentences|textMultiLine|text"
+                android:textColor="@android:color/black"
+                android:textColorHint="#9E9E9E" />
+
+            <ImageButton
+                android:id="@+id/sendButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_baseline_send_24"
+                app:tint="@android:color/black" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+
+
+
+</LinearLayout>
